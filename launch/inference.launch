@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+
+    <arg name="ckpt_path" default = "/home/caris/catkin_ws/src/Gesture_Recognition_ROS/model/lstm/lstm623.ckpt" />
+
+    <node name="LSTM_Inference" pkg="Gesture_Recognition_ROS" type="lstm_inference.py" output="screen" required="true">
+        <param name = "m_score" value = "True"/>
+        <param name = "debug"   value = "False"/>
+        <param name = "ckpt"    value = "$(arg ckpt_path)"/>
+    </node>
+
+</launch>
