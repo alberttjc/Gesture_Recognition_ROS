@@ -41,7 +41,6 @@ def humans_to_msg(humans):
 
     return persons
 
-
 def callback_image(data):
     # et = time.time()
     try:

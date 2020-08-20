@@ -1,0 +1,10 @@
+<launch>
+  <include file="$(find kinect2_bridge)/launch/kinect2_bridge.launch" />
+
+  <!--
+  <node pkg="gesture_detector" type="gesture_listener.py" name="gesture_listener" output="screen"/>
+  <include file="$(find openpose_ros)/launch/openpose_ros.launch" />
+  <include file="$(find kinect2_bridge)/launch/kinect2_bridge.launch" />
+  -->
+
+</launch>

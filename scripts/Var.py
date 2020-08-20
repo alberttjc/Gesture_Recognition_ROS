@@ -5,13 +5,12 @@ class Var():
 
     def __init__(self):
         self.input_size = 18
-        # , 3: "Y Pose", 4: "Dab", 5: "Sorry"}
         self.classes = {0: "None", 1: "Wave"}#, 2: "X Pose"}
         self.num_classes = len(self.classes)
         self.features = ["xDist", "yDist", "ScoreAvgs"]
         #self.features = ["Dist", "ScoreAvgs"]
         self.num_features = len(self.features)
-        self.rate = 20
+        self.rate = 10
 
         self.lstm_vars = {
             "num_layers": 2,

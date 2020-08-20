@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<launch>
+
+    <arg name="video_width"   default="960" />
+    <arg name="video_height"  default="540" />
+    <arg name="camera_topic"  default="/kinect2/qhd/image_color" />
+    <arg name="output_dir"   default="/home/caris/Data" />
+
+    <node name="video_recorder" pkg="Gesture_Recognition_ROS" type="recorder.py" output="screen" required="true">
+
+        <param name="output_width"  value="$(arg video_width)" />
+        <param name="output_height" value="$(arg video_height)" />
+        <param name="output_path"   value="$(arg output_dir)" />
+        <param name="source"        value="$(arg camera_topic)" />
+        <param name="loop"          value="True" />
+        <param name="output_format" value="x264" />
+        <param name="output_topic"  value="~output" />
+
+    </node>
+
+    <node name="image_view" pkg="image_view" type="image_view" respawn="false" output="screen" required="true">
+        <remap from="image" to="/video_recorder/output"/>
+        <param name="autosize" value="true" />
+    </node>
+
+</launch>
